@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+// U08282838
+
+import React from 'react';
+import RateMovieButton from './components/RateMovieButton';
+import MovieSelector from './components/MovieSelector';
+import UploadButton from './components/UploadButton';
 import './App.css';
 
 function App() {
+  const handleMovieSelect = (movie) => {
+    console.log(`Selected movie: ${movie.title}`);
+    // Update other parts of the toolbar or application as needed
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="toolbar">
+      <MovieSelector onSelectMovie={handleMovieSelect} />
+      <RateMovieButton/>
+      <UploadButton/>
     </div>
   );
 }
